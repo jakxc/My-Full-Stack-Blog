@@ -13,7 +13,7 @@ const CreateAccount = () => {
 
     const createAccount = async () => {
         try {
-            if (formData.password != formData.confirmPassword) {
+            if (formData.password !== formData.confirmPassword) {
                 setError("Password and confirm password do not match.");
                 return;
             }

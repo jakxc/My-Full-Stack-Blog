@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from 'axios';
-import CommentsList from "./CommentsList";
-import AddCommentForm from "./AddCommentForm";
+import CommentsList from "../components/CommentsList";
+import AddCommentForm from "../components/AddCommentForm";
 import NotFound from "./NotFound";
-import articles from '../article-content'
+import articles from './article-content'
 import useUser from "../hooks/UseUser";
 
 const Article = () => {
     const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [], canUpvote: false });
     const { canUpvote } = articleInfo;
-    const { articleId } = useParams();
+    const { articleId } = useParams(); // used to navigate between different article paths 
     const { user, isLoading } = useUser();
 
     useEffect(() => {
